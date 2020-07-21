@@ -27,6 +27,8 @@ func split(sum int) (x, y int)  {
 // var statement declares a list of variables; as in function argument lists, the type is last
 // a var statement can be at package or function level.
 var c, python, java bool
+// variable initializer
+var j, k int = 2, 3
 
 func main()  {
 	var i int
@@ -43,5 +45,5 @@ func main()  {
 
 	fmt.Println(split(17))
 
-	fmt.Println(i, c, python, java)
+	fmt.Println(i, j, k, c, python, java)
 }
