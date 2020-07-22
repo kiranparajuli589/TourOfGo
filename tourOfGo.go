@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"math/cmplx"
 	"math/rand"
 	"time"
 )
@@ -30,6 +31,16 @@ var c, python, java bool
 // variable initializer
 var j, k int = 2, 3
 
+// the example shows variables of several types, and also that variable declarations
+// may be "factored" into blocks, as with import statements
+var (
+	ToBe bool = false
+	Hello string = "Hello"
+	Inta int = 589
+	MaxInt uint64 = 1<<64 - 1
+	z complex128 = cmplx.Sqrt(-5+12i)
+)
+
 func main()  {
 	var i int
 
@@ -53,4 +64,16 @@ func main()  {
 	g := 3
 	sharp, django, laravel := true, false, "oho!"
 	fmt.Println(e, f, g, sharp, django, laravel)
+	// With the Go fmt package you can format numbers and strings padded with spaces or zeroes, in different bases
+	// fmt.Printf formats and writes to standard output
+	// fmt.Sprintf to format a string without printing
+	// %T -> type of the value
+	// %v -> default format
+	// %+d -> always show sign
+	// there are several other formatting options ref https://yourbasic.org/golang/fmt-printf-reference-cheat-sheet/
+	fmt.Printf("Type: %T Value: %v\n", ToBe, ToBe)
+	fmt.Printf("Type: %T Value: %v\n", MaxInt, MaxInt)
+	fmt.Printf("Type: %T Value: %v\n", z, z)
+	fmt.Printf("Type: %T Value: %v\n", Hello, Hello)
+	fmt.Printf("Type: %T Value: %v\n", Inta, Inta)
 }
