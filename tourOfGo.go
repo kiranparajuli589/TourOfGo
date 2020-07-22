@@ -46,4 +46,11 @@ func main()  {
 	fmt.Println(split(17))
 
 	fmt.Println(i, j, k, c, python, java)
+
+	// inside a function, the := short assignment statement can be used in place of var declaration with implicit type
+	// outside a function, every statement begins with a keyword (var, func and so on) and so the := construct is not available
+	var e, f int = 1, 2
+	g := 3
+	sharp, django, laravel := true, false, "oho!"
+	fmt.Println(e, f, g, sharp, django, laravel)
 }
