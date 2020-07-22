@@ -67,13 +67,20 @@ func main()  {
 	// With the Go fmt package you can format numbers and strings padded with spaces or zeroes, in different bases
 	// fmt.Printf formats and writes to standard output
 	// fmt.Sprintf to format a string without printing
-	// %T -> type of the value
-	// %v -> default format
-	// %+d -> always show sign
+	// %T -> type of the value | %t -> boolean as true or false
+	// %v -> default format | %+d -> always show sign
+	// %s -> quoted string | %q -> quoted string
 	// there are several other formatting options ref https://yourbasic.org/golang/fmt-printf-reference-cheat-sheet/
 	fmt.Printf("Type: %T Value: %v\n", ToBe, ToBe)
 	fmt.Printf("Type: %T Value: %v\n", MaxInt, MaxInt)
 	fmt.Printf("Type: %T Value: %v\n", z, z)
 	fmt.Printf("Type: %T Value: %v\n", Hello, Hello)
 	fmt.Printf("Type: %T Value: %v\n", Inta, Inta)
+
+	// if variables are declared without an explicit initial value, their zero value is set
+	var ii int
+	var ff float64
+	var bb bool
+	var ss string
+	fmt.Printf("%v %v %v %q\n", ii, ff, bb, ss)
 }
