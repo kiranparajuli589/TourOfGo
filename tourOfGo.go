@@ -92,4 +92,18 @@ func main()  {
 	fmt.Printf("Type: %T Value: %v\n", iii, iii)
 	fmt.Printf("Type: %T Value: %v\n", fff, fff)
 	fmt.Printf("Type: %T Value: %v\n", uuu, uuu)
+
+	// When declaring a variable without specifying an explicit type(either by using the := syntax or var = expression syntax),
+	// the variable's type is inferred from the value on the right hand side.
+	//var i int
+	//j := i // Now j is an int
+
+	//Constants
+	// Constants are declared like variables, but with the const keyword.
+	// Constants can be character, string, boolean, or numeric values.
+	// Constants cannot be declared using the := syntax
+	const Pi = 3.14
+	const World = "World"
+	fmt.Println("Hello", World)
+	fmt.Println("Happy", Pi, "Day")
 }
