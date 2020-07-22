@@ -83,4 +83,13 @@ func main()  {
 	var bb bool
 	var ss string
 	fmt.Printf("%v %v %v %q\n", ii, ff, bb, ss)
+
+	//The expression T(v) converts the value v to the type T.
+	//Some numeric conversions:
+	iii := 42
+	fff := float64(iii)
+	uuu := uint(fff)
+	fmt.Printf("Type: %T Value: %v\n", iii, iii)
+	fmt.Printf("Type: %T Value: %v\n", fff, fff)
+	fmt.Printf("Type: %T Value: %v\n", uuu, uuu)
 }
