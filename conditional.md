@@ -22,7 +22,7 @@ func main() {
 }
 ```
 
-### If with a short statement
+#### If with a short statement
 Like for, the if statement can start with a short statement to execute before the condition.
 Variables declared by the statement are only in scope until the end of the if.
 ```go
@@ -44,7 +44,7 @@ func main()  {
     )
 }
 ```
-### If and else
+#### If and else
 Variables declared inside an if short statement are also available inside any of the else blocks.
 
 (Both calls to pow return their results before the call to fmt.Println in main begins.)
@@ -100,7 +100,7 @@ func main() {
 }
 ```
 
-### Switch evaluation order
+#### Switch evaluation order
 Switch cases evaluate cases from top to bottom, stopping when a case succeeds.
 For example, 
 ```go
@@ -133,7 +133,7 @@ func main() {
 	}
 }
 ```
-### Switch with no condition
+#### Switch with no condition
 Switch without a condition is the same as `switch true`
 This construct can be a clean way to write long if-then-else chains.
 
