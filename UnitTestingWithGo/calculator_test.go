@@ -1,6 +1,9 @@
 package main
 
-import "testing"
+import (
+	"io/ioutil"
+	"testing"
+)
 
 type AddResult struct {
 	x, y, expected int
@@ -44,5 +47,16 @@ func TestAdd(t *testing.T) {
 		if result != test.expected {
 			t.Fatalf("Test failed. Expected %d but found %d", test.expected, result)
 		}
+	}
+}
+
+func TestReadFile(t *testing.T) {
+	expected := "hello world\n"
+	data, err := ioutil.ReadFile("testData/test.data")
+	if err != nil {
+		t.Fatal("Could not open file!")
+	}
+	if string(data) != expected {
+		t.Fatalf("Test failed: Expected %q but found %q", expected, string(data))
 	}
 }
