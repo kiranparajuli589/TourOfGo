@@ -1,18 +1,16 @@
 package main
 
-import (
-	"fmt"
-	"time"
-)
+import "fmt"
 
-func main() {
-	t := time.Now()
-	switch {
-	case t.Hour() < 12:
-		fmt.Println("Good morning!")
-	case t.Hour() < 17:
-		fmt.Println("Good afternoon.")
-	default:
-		fmt.Println("Good evening.")
-	}
+func main()  {
+	i,j := 42, 2701
+	p := &i     // point to i
+	fmt.Println(p) // address of i
+	fmt.Println(*p)     // read i through the pointer
+	*p = 21     // set i through the pointer
+	fmt.Println(i)      // see the new value of i
+
+	p = &j      // point to j
+	*p = *p / 37    // divide j through the pointer
+	fmt.Println(j) // see the new value of j
 }
