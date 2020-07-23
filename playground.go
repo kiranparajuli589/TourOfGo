@@ -1,14 +1,21 @@
 package main
 import "fmt"
-type Vertex struct{
-	X, Y int
+func main()  {
+	var s []int
+	printSlice(s)
+
+	//append works on nil slices.
+	s = append(s, 0)
+	printSlice(s)
+
+	//The slice grows as needed
+	s = append(s, 1)
+	printSlice(s)
+
+	// we can add more than one element at a time
+	s = append(s, 2,3,4)
+	printSlice(s)
 }
-var (
-	v1 = Vertex{1, 2}     // has type Vertex
-	v2 = Vertex{X:1}      // Y:0 implicit
-	v3 = Vertex{}         // X:0 and Y:0
-	p = &Vertex{1,2}      // has type *Vertex
-)
-func main() {
-	fmt.Println(v1, p, v2, v3)
+func printSlice(s []int)  {
+	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
 }
