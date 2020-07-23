@@ -31,4 +31,21 @@ func main() {
 	//for {
 	//	fmt.Println("Hello Forever")
 	//}
+
+	// Range
+	// The range form of the for loop iterates over a slice or map.
+	// When ranging over a slice, two values are returned for each iteration. The first is the index,
+	// and the second is a copy of the element at that index
+	pow := []int{1,2,4,8,16,32,64,128}
+	for i, v := range pow {
+		fmt.Printf("2**%d = %d\n", i, v)
+	}
+	// you can skip the index or value by assigning to _
+	power := make([]int, 10)
+	for i := range power {
+		power[i] = 1 << uint(i) // == 2**i
+	}
+	for _, value := range power {
+		fmt.Printf("%d\n", value)
+	}
 }
