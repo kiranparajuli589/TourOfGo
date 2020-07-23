@@ -2,6 +2,17 @@ package main
 
 import "testing"
 
+type AddResult struct {
+	x, y, expected int
+}
+
+var addResults = []AddResult{
+	{1,1,2},
+	{1,-1,0},
+	{0,0,0},
+	{41,41,82},
+}
+
 func TestCalculator(t *testing.T) {
 	value := 2
 	result := Calculate(value)
@@ -23,6 +34,15 @@ func TestTableCalculate(t *testing.T) {
 	for _, test := range tests {
 		if output := Calculate(test.input); output != test.expected {
 			t.Errorf("Test failed. Expected %d but found %d", test.expected, output)
+		}
+	}
+}
+
+func TestAdd(t *testing.T) {
+	for _, test := range addResults {
+		result := Add(test.x, test.y)
+		if result != test.expected {
+			t.Fatalf("Test failed. Expected %d but found %d", test.expected, result)
 		}
 	}
 }
