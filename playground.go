@@ -1,18 +1,35 @@
 package main
+
 import (
 	"fmt"
 	"math"
 )
-type MyFloat float64
 
-func (f MyFloat) Abs() int64 {
-	if f < 0 {
-		return int64(-f)
-	}
-	return int64(f)
+type I interface {
+	M()
+}
+type T struct {
+	S string
+}
+type F float64
+
+func (t T) M() {
+	fmt.Println(t.S)
+}
+func (f F) M() {
+	fmt.Println(f)
 }
 func main() {
-	f := MyFloat(-math.Sqrt2)
-	fmt.Println(f)
-	fmt.Println(f.Abs())
+	var i I
+
+	i = T{"Hello World"}
+	describe(i)
+	i.M()
+
+	i = F(math.Pi)
+	describe(i)
+	i.M()
+}
+func describe(i I) {
+	fmt.Printf("(%v, %T)\n", i, i)
 }
