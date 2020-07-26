@@ -1,21 +1,18 @@
 package main
-import "fmt"
-func main()  {
-	var s []int
-	printSlice(s)
+import (
+	"fmt"
+	"math"
+)
+type MyFloat float64
 
-	//append works on nil slices.
-	s = append(s, 0)
-	printSlice(s)
-
-	//The slice grows as needed
-	s = append(s, 1)
-	printSlice(s)
-
-	// we can add more than one element at a time
-	s = append(s, 2,3,4)
-	printSlice(s)
+func (f MyFloat) Abs() int64 {
+	if f < 0 {
+		return int64(-f)
+	}
+	return int64(f)
 }
-func printSlice(s []int)  {
-	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
+func main() {
+	f := MyFloat(-math.Sqrt2)
+	fmt.Println(f)
+	fmt.Println(f.Abs())
 }
